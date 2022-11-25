@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -24,8 +25,11 @@ public class StartAudioScript : MonoBehaviour
         //  timeEnd = DateTime.Now;
         audioSource = GetComponent<AudioSource>();
         AudioLibMp3 audioLibMp3 = new AudioLibMp3();
-       // string PathToFolderMp3 = "I:\\data1\\mp3.eng\\HarryPotter";
-        string PathToFolderMp3 = "U:\\_cs5\\No Copyright Library";
+        // string PathToFolderMp3 = "I:\\data1\\mp3.eng\\HarryPotter";
+        string PathToFolderMp3 = Application.dataPath + "/Audio/Music";
+
+        print(Application.dataPath);
+        print(PathToFolderMp3);
 
 
         ListAllMp3 = audioLibMp3.Mp3FilesToArray(PathToFolderMp3);
