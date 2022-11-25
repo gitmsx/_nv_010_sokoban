@@ -7,16 +7,13 @@ using UnityEngine.UI;
 public class GameStart : MonoBehaviour
 {
 
-
-    [HideInInspector] private Text Text__info003;
+     private Text Text__info003;
     [HideInInspector] private Text Text__info001;
     [HideInInspector] private Text Text__info002;
     public int Criterii_win2 = 4;
 
     private float TimeToCheckCircle = 2;
     private float TimeToCheck;
-    private float tmp_Circle = 0;
-
     private int CurrentLevel = 1;
 
 
@@ -43,17 +40,8 @@ public class GameStart : MonoBehaviour
         Text__info002 = GameObject.Find("Text__info002").GetComponent<Text>();
         Text__info003 = GameObject.Find("Text__info003").GetComponent<Text>();
         Text__info003.text = "Text__info003";
-
         CurrentLevel = 1;
         LevelStart(CurrentLevel);
-
-
-
-
-
-
-
-
 
     }
 
@@ -73,7 +61,6 @@ public class GameStart : MonoBehaviour
         if (TimeToCheckCircle < TimeToCheck)
         {
             TimeToCheck = 0;
-            tmp_Circle++;
             if (CheckWin()) NewLevel();
         }
     }
@@ -93,18 +80,12 @@ public class GameStart : MonoBehaviour
 
     void NewLevel()
     {
-
-        CurrentLevel++;
-
         DestroyByTag("Wall");
         DestroyByTag("Box");
         DestroyByTag("Player");
         DestroyByTag("Target");
-        
-        LevelStart(CurrentLevel);
 
-
-
+        LevelStart(++CurrentLevel);
     }
 
 

@@ -249,8 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf1e4c4295050d49943ba2c2d787998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToChangeMp3: 7
-  flySound: {fileID: 0}
+  TimeToChangeMp3: 15
 --- !u!4 &241345120
 Transform:
   m_ObjectHideFlags: 0
@@ -617,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d91acb23522c04cba08caf7b049843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pinofView: {fileID: 2122233696}
 --- !u!1 &1027464546
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +866,7 @@ MonoBehaviour:
   MapsAll: {fileID: 0}
   Wall: {fileID: 2628988950912961348, guid: d860addc9a36f7b48b354ee1b317d1cd, type: 3}
   Box: {fileID: 2447667144321698641, guid: e14d1acaf73010645a933d8431f50de4, type: 3}
-  Player: {fileID: 388328124031408652, guid: 25d0661309c75964da3a842f1e120f18, type: 3}
+  Player: {fileID: 2475609064680880091, guid: 6bcc267837c069c4986ff4ed956bf180, type: 3}
   Target: {fileID: 4561938102110694503, guid: a12200af4f0efc943b4fb64cb0167ee9, type: 3}
   Someth: {fileID: 2159345180444815355, guid: 62866ace4cd2bcb43952f109267431c2, type: 3}
   Scale_tmp: 1
