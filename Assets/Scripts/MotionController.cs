@@ -8,6 +8,8 @@ public class MotionController : MonoBehaviour
 {
 
     int new_direction = 0;
+    int current_direktion = 0;
+    private Vector3 newRotation;
     bool isMoving = false;
     public float speed = 12f;
     Vector3 destPos; //позиция куда двигаемся
@@ -52,6 +54,35 @@ public class MotionController : MonoBehaviour
 
         if (isMoving)
         {
+
+            if (current_direktion != new_direction)
+            {
+                switch (new_direction)
+                {
+                    case 1:
+                        newRotation = new Vector3(0, 90, 0);
+                        break;
+                    case 2:
+                        newRotation = new Vector3(0, 180, 0);
+                        break;
+                    case 3:
+                        newRotation = new Vector3(0, -90, 0);
+                        break;
+                    case 0:
+                        newRotation = new Vector3(0, 0, 0);
+                        break;
+                    default:
+                        newRotation = new Vector3(0, 0, 0);
+                        break;
+                }
+
+                transform.eulerAngles = newRotation;
+
+                //  transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, newRotation, Time.deltaTime/ speed_time_rotation);
+
+            }
+
+
             destPos = transform.position + DirectionM[new_direction] * cellSize;
 
 
@@ -67,6 +98,8 @@ public class MotionController : MonoBehaviour
         }
         else
         {
+            current_direktion = new_direction;
+
             if (Input.GetKeyDown(KeyCode.W)) { new_direction = 0; isMoving = true; }
             else if (Input.GetKeyDown(KeyCode.D)) { new_direction = 1; isMoving = true; }
             else if (Input.GetKeyDown(KeyCode.S)) { new_direction = 2; isMoving = true; }
